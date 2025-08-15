@@ -1,0 +1,11 @@
+package CommonQuestionAsked;
+
+public class Palindromejava8 {
+
+	public static void main(String[] args) {
+		
+		String name="madam";
+		name=name.toLowerCase();
+		
+	}
+}

@@ -1,0 +1,14 @@
+package InterfaceJava8;
+
+
+interface a
+{
+	public static void m1()
+	{
+		
+	}
+}
+
+public class Bablu1Main {
+
+}

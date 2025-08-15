@@ -1,0 +1,19 @@
+package OOPS_CODE_DECODE;
+
+
+
+
+public class DurgaSir {
+	public static void main(String[] args) {
+		
+		String s="Bablu";
+		Object ob=s;
+		System.out.println(s==ob);
+		
+		
+		Integer i=100;
+		Number io=i;
+		
+	}
+
+}

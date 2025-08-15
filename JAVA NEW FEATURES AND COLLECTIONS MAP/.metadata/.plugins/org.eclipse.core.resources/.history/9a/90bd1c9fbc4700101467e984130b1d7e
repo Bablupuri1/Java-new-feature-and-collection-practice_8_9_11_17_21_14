@@ -1,0 +1,79 @@
+package Examples;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.jdt.annotation.NonNull;
+
+public class DemoVar {
+
+	public static void main(String[] args) 
+	{
+//		List<String> names = List.of("Amit", "Ravi", "Anu");
+//		
+//		names.forEach((var name) -> System.out.println(name));
+//		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		// here one thing possible
+
+//		System.out.println("Fruits..........");
+//		ArrayList<String> fruit = new ArrayList();
+//		
+//		fruit.add("Apple");
+//		fruit.add("Pomegrante");
+//		fruit.add("Grapes");
+//
+//		fruit.forEach((var product) -> System.out.println(product));
+//
+//		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// we can print like this
+//
+//		fruit.forEach((var product) -> {
+//			if (product.equalsIgnoreCase("Apple")) {
+//				System.out.println("Fruits is Available:" + product);
+//			} else {
+//				System.out.println("Fruits is Not Available:" + product);
+//			}
+//		});
+
+		// What Benifit of take Using var keyword in java
+		
+		
+		 List<String> friends = List.of("Bablu", null, "Anu");
+
+	        // Using @NonNull with var in lambda
+	        names.forEach((@NonNull var name) -> {
+	            System.out.println("Hello, " + name);
+	        });
+	        
+	        
+	        
+
+	}
+
+}

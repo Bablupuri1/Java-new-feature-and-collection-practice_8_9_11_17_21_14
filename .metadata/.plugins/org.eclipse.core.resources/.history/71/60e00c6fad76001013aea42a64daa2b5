@@ -1,0 +1,8 @@
+package CommonQuestionAsked;
+
+public class Palindromejava8 {
+
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,188 @@
+package MethodOfStream;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+class Person {
+	String name;
+
+	Person(String name) {
+		this.name = name;
+		System.out.println("Created Person: " + name);
+	}
+}
+
+public class MehtodPratice {
+
+	public static void display(Integer element) {
+		System.out.println("Welcome static method called in feEach method" + element);
+	}
+
+	public static void main(String[] args) {
+
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+
+		Stream<Integer> num = list.stream();
+//		num.forEach(nums->System.out.println("Element is:"+nums));
+
+		// another way use
+
+//		num.forEach(System.out::println);//this is right but
+		// same stream object you can reuse that why we will get illegalCastException
+
+		// condition in forEach
+//		num.forEach(element->{
+//			if(element%2==0)
+//			{
+//				System.out.println("Even:"+element);
+//			}
+//			else
+//			{
+//				System.out.println("Odd:"+element);
+//			}
+//		});
+
+//		num.forEach(MehtodPratice::display);//this  display method must be Integrr type accept becouse here list is Integr cotains
+
+//==============================================================
+
+		List<String> names = Arrays.asList("Amit", "Bablu", "Rohit");
+		names.forEach(Person::new);//called constarctor  which is One parameter constarctor in Person class and assign
+
+//	=========================map=============================================
+
+		List<String> namess = List.of("ram", "kkk ");
+//		namess.stream().map(String::toUpperCase).forEach(System.out::println);  // Output: RAM SHYAM
+
+		// this is same
+//		namess.stream().map(name->name.toLowerCase()).forEach(System.out::println);
+
+		List<Integer> rol = List.of(101, 201, 3, 4);
+//		rol.stream().map(data->data.toString()).filter(charcter->charcter.startsWith("1")).forEach(System.out::println);
+
+//=========================== flatMap()=================================================
+
+		List<List<Integer>> data = List.of(List.of(10, 20, 30), List.of(40, 50));
+
+		data.stream().flatMap(listss -> listss.stream()) // flattening: Stream<Integer>
+				.forEach(System.out::println); // Print all integers
+
+		System.out.println("flatMap");
+		List<List<String>> dataa = List.of(List.of("A", "B"), List.of("C"));
+		dataa.stream().flatMap(lists -> lists.stream()).forEach(System.out::println); // Output: A B C
+
+//============================sorted()=================================================
+
+		List<Integer> listt = List.of(5, 3, 9);
+		
+		listt.stream().sorted().forEach(System.out::println); // Output: 3 5 9
+
+		list.stream().sorted(Comparator.naturalOrder()) // same as .sorted()
+				.forEach(System.out::println);
+
+		list.stream().sorted(Comparator.reverseOrder()) // reverse of natural order
+				.forEach(System.out::println);
+
+		list.stream().sorted((a, b) -> b - a) // descending using lambda
+				.forEach(System.out::println);
+
+//========================peek()===========================================
+
+		System.out.println("peek_______________");
+		List<String> listk = List.of("a", "b");
+		List<String> store = listk.stream().peek(System.out::println).collect(Collectors.toList()); // Output: a b (in
+																									// console)
+
+		
+		System.out.println(store);
+		
+//		======================collect==========================================
+		
+		List<String> namesd = List.of("Ram", "Shyam");  
+		List<String> result = namesd.stream().collect(Collectors.toList());
+
+		
+		
+//		======================reduce()===========================================
+		
+		
+		
+		List<Integer> numsl = List.of(1, 2, 3);  
+		int sum = numsl.stream().reduce(0, (a,b)->a+b);
+		System.out.println("sum:"+sum);
+		
+		
+//		List: [1, 2, 3]
+//				Identity: 0
+//
+//				Now step-by-step:
+//
+//				accumulator(0, 1) → 0 + 1 = 1
+//
+//				accumulator(1, 2) → 1 + 2 = 3
+//
+//				accumulator(3, 3) → 3 + 3 = 6
+		
+		
+		
+		
+//============================count()======================================		
+		long cnt = Stream.of("a", "b", "c").count();  // Output: 3
+		System.out.println("count:"+cnt);
+		
+//=========================================================================
+		
+		Optional<String> val = Stream.of("A", "B").findFirst();  // Output: Optional[A]
+
+		System.out.println("Optinal findFirst:"+val);
+		
+		
+
+//===========================================================
+		
+		Optional<String> vals = Stream.of("X", "Y").findAny();  // Output: Optional[X] or Optional[Y]
+
+		System.out.println("Find Any:"+vals);
+		
+		
+		  // Sequential stream
+        String result1 = names.stream()
+                              .findAny()
+                              .orElse("not found");
+        
+        names.stream().forEachOrdered(System.out::println);
+        
+        
+        System.out.println("Sequential findAny: " + result1);
+
+        
+        // Parallel stream
+        String result2 = names.parallelStream()
+                              .findAny()
+                              .orElse("Not Found");
+        System.out.println("Parallel findAny: " + result2);
+        
+        System.out.println("____________________________");
+        List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
+
+        nums.parallelStream()
+            .forEach(num -> {
+                System.out.println(Thread.currentThread().getName() + " → " + num);
+            });
+
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,30 @@
+package LambdaExpression;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+public class Demo {
+    public static void main(String[] args) {
+        List<String> names = List.of("Bablu", "Anjali", "Ravi", "Ramesh");
+
+        // Predicate to filter names starting with 'R'
+        Predicate<String> startsWithR = name -> name.startsWith("R");
+
+        // Function to convert name to uppercase
+        Function<String, String> toUpperCase = name -> name.toUpperCase();
+
+        // Filter names using Predicate
+        List<String> filteredNames = names.stream()
+            .filter(startsWithR)
+            .collect(Collectors.toList());
+
+        System.out.println("Filtered Names: " + filteredNames); // [Ravi, Ramesh]
+
+        // Transform names using Function
+        List<String> upperNames = names.stream()
+            .map(toUpperCase)
+            .collect(Collectors.toList());
+
+        System.out.println("Uppercase Names: " + upperNames); // [BABLU, ANJALI, RAVI, RAMESH]
+    }
+}

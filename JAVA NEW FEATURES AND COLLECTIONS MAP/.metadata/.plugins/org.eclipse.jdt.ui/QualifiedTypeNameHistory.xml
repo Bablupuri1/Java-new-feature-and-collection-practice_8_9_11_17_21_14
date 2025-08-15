@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="PrimitiveFunctionalInterface.IntPredicate"/>
+    <fullyQualifiedTypeName name="java.util.function.IntPredicate"/>
+    <fullyQualifiedTypeName name="java.util.function.IntFunction"/>
+    <fullyQualifiedTypeName name="java.util.function.DoubleToIntFunction"/>
+    <fullyQualifiedTypeName name="PredefinedFunctionalInterface.Movie"/>
+    <fullyQualifiedTypeName name="java.util.function.Function"/>
+    <fullyQualifiedTypeName name="Method_And_Constractor_Reference.Bablu"/>
+    <fullyQualifiedTypeName name="MethodReference.Students"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="OOPS_CODE_DECODE.AmbigutyWithInterface"/>
+    <fullyQualifiedTypeName name="OOPS_CODE_DECODE.Profession"/>
+    <fullyQualifiedTypeName name="OOPS_CODE_DECODE.FactoryPattern"/>
+    <fullyQualifiedTypeName name="java.util.stream.Stream"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
+    <fullyQualifiedTypeName name="java.util.Enumeration"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+</qualifiedTypeNameHistroy>

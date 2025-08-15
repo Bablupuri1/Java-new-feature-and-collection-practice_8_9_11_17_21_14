@@ -1,0 +1,73 @@
+package bablu;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+@WebServlet("/logins")
+public class LoginServlet extends HttpServlet {
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+
+        PrintWriter out = response.getWriter();
+
+        try {
+            Connection conn = DBConn.getConnection(); // your DB connection method
+
+            if (conn != null) 
+            {
+                String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1, user);
+                ps.setString(2, pass);
+
+                ResultSet rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    //  Login successful
+                	
+                	HttpSession session = request.getSession();
+                	session.setAttribute("username", user);
+                	System.out.println("Session Created Id:"+session.getId());
+                	System.out.println("Session created time:"+session.getCreationTime());
+                	System.out.println("Session max intervals:"+session.getMaxInactiveInterval());
+                	
+                	response.sendRedirect("welcome.jsp");
+
+                    
+                } else {
+                    //  Login failed
+                    out.println("Invalid username or password!");
+                }
+
+                rs.close();
+                ps.close();
+                conn.close();
+                
+                
+                
+            }
+            else 
+            {
+                out.println(" Database connection failed.");
+            }
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace(out);
+        }
+    }
+}

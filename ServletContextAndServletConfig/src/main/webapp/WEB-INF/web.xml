@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+
+<welcome-file-list>
+<welcome-file>home.jsp</welcome-file>
+</welcome-file-list>
+
+
+
+<context-param>
+
+<param-name>name</param-name>
+<param-value>Bablu Kumar</param-value>
+
+
+</context-param>
+
+
+<!--   //we need to configure -->
+
+<servlet>
+<servlet-name>myservlet</servlet-name>
+<servlet-class>com.bablu.ServletConfigExample</servlet-class>
+
+<init-param>
+<param-name>address</param-name>
+<param-value>Rajpur Kaul marpa</param-value>
+</init-param>
+
+</servlet>
+
+
+<servlet-mapping>
+<servlet-name>myservlet</servlet-name>
+<url-pattern>/getservletconfig</url-pattern>
+</servlet-mapping>
+
+
+
+
+
+</web-app>

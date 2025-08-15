@@ -1,0 +1,8 @@
+package Examples;
+
+public class StringNewMethod {
+
+	public static void main(String[] args) {
+		
+	}
+}

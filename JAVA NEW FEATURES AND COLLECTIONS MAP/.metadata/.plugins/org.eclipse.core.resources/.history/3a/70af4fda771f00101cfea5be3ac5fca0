@@ -1,0 +1,21 @@
+package TwoArgumentFunctionalInterface;
+
+import java.util.function.BiFunction;
+
+public class BiFunctionInterface {
+
+	public static void main(String[] args) {
+		BiFunction<Integer, Integer, Integer> bill = (qty, price) -> {
+
+			Integer price1 = 0;
+			price1 = qty * price;
+
+			return price1;
+
+		};
+
+		System.out.println(bill.apply(10, 30));
+
+	}
+
+}

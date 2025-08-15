@@ -1,0 +1,78 @@
+package Day1_Character_String;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class First_And_Second_Non_Repeating_Character
+{
+	public static void main(String[] args) 
+	{
+
+		String name = "bablu";
+
+//		 Time Complexity:
+//		 First loop: O(n)
+//		 second loop: O(n)
+//
+//		 Overall: O(n) time and O(n) space
+
+		
+		char arr[] = name.toCharArray();
+		Map<Character, Integer> chacratercount = new LinkedHashMap<Character, Integer>();
+
+		for (Character c : arr)
+		{
+			
+			if (chacratercount.containsKey(c))
+			{
+				chacratercount.put(c, chacratercount.get(c) + 1);
+				
+			} 
+			else 
+			{
+				chacratercount.put(c, 1);
+			}
+			
+		}
+
+		// so i am ready with character frequency
+
+		// now filter the which character is integer value is 1
+
+		ArrayList<Character> nonRepeatingCharacter = new ArrayList<Character>();
+
+		for (Map.Entry<Character, Integer> entry : chacratercount.entrySet()) 
+		{
+			if (entry.getValue() == 1)
+			{
+				nonRepeatingCharacter.add(entry.getKey());
+
+			}
+		}
+		
+		
+
+		// now i am ready with non repeating character
+		
+
+		if (nonRepeatingCharacter.size() >= 1) 
+		{
+			System.out.println("First non rep:" + nonRepeatingCharacter.get(0));
+		} else 
+		{
+			System.out.println("Non First non reparet");
+		}
+
+		if (nonRepeatingCharacter.size() >= 2) 
+		{
+			System.out.println("Second No Repaet:" + nonRepeatingCharacter.get(1));
+		} else 
+		{
+			System.out.println("Second Non repaet nothere:");
+		}
+
+		
+	}
+
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="false"/>
+		<list key="findhistory">
+			<item value="fail"/>
+			<item value="fails"/>
+			<item value="add"/>
+			<item value="set"/>
+			<item value="toString"/>
+			<item value="of"/>
+			<item value="asList"/>
+			<item value="asList()"/>
+			<item value="collect"/>
+			<item value="findAny"/>
+			<item value="find"/>
+			<item value="toList"/>
+			<item value="toLisy"/>
+			<item value="anyMatch"/>
+			<item value="reduce"/>
+		</list>
+	</section>
+</section>

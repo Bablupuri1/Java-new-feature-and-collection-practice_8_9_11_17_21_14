@@ -1,0 +1,11 @@
+package CommonQuestionAsked;
+
+public class PrimeCheckJava8 {
+
+	public static void main(String[] args) {
+		
+		int n=13;
+		
+		
+	}
+}

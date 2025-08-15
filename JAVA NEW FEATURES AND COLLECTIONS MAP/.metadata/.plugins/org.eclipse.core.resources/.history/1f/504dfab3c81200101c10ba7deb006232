@@ -1,0 +1,22 @@
+package InterfaceJava8;
+
+
+interface a1
+{
+	public static void m1()
+	{
+		System.out.println("this is static mehtod of a inteface");
+	}
+}
+
+
+
+public class Bablu1Main  implements a1
+{
+	public static void main(String[] args) {
+		
+		a1.m1();
+		
+	}
+
+}

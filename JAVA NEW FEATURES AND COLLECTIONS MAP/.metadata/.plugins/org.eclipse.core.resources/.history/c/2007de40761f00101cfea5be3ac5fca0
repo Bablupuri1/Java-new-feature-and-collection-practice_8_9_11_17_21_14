@@ -1,0 +1,9 @@
+package TwoArgumentFunctionalInterface;
+
+public class BiPredicateInterface 
+{
+	public static void main(String[] args) {
+		
+	}
+
+}

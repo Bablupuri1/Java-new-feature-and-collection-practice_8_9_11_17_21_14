@@ -1,0 +1,17 @@
+package ArrayListExample;
+
+import java.util.LinkedList;
+
+public class ImplementStackUsingLinkedList {
+	public static void main(String[] args) {
+		LinkedList<Integer> stack = new LinkedList<>();
+
+		stack.add(100);
+		stack.push(10); // same as addFirst()
+		stack.push(20);
+		System.out.println(stack.pop()); // removes from front
+		System.out.println(stack);
+		
+		//lifo
+	}
+}

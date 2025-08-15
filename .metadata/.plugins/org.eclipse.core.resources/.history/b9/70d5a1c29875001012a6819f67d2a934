@@ -1,0 +1,75 @@
+package OptionalClassEExample;
+
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+public class Example1 {
+
+	public static Optional<String> getName(int id) {
+		// get from db
+		// solve using optional class
+//		return null;
+
+		String name = "lll";
+
+//		return Optional.of(name);
+
+		// this us final solution to avoid npe
+		
+
+		return Optional.ofNullable(name);
+
+	}
+
+	public static void main(String[] args) {
+//		String name = getName(1);
+//		System.out.println(name.toUpperCase());
+
+		// now use Optional class to avoid npe
+
+		Optional<String> name = getName(101);
+
+//		name.isPresent();
+		if (name.isPresent()) {
+			System.out.println(name.get().toUpperCase());
+		} else {
+			System.out.println("name is not presrent ");
+		}
+
+		// now using lambda exresiin
+
+		name.ifPresent(x -> System.out.println(x));
+
+		// or write like this
+
+		name.ifPresent(System.out::println);
+
+//		---------------------------------
+		Optional<String> name2 = getName(101);
+
+		String res = name2.isPresent() ? name.get() : "NA";
+
+		System.out.println(res);
+
+		// we can write like this
+
+		String res2 = name.orElse("NAA");
+		System.out.println(res2);
+
+//-----------orElseGet supplier leta h-----------------------------
+
+		String res3 = name2.orElseGet(() -> "NAAAAA");
+		System.out.println(res3);
+
+//--------------------orElseThrow--------------------------------		
+
+		String res4 = name2.orElseThrow(() -> new NoSuchElementException());
+		System.out.println(res3);
+
+		Optional<String> name3 = getName(101);
+		Optional<String> map = name3.map(x -> x.toUpperCase());
+
+		System.out.println(map.get());
+
+	}
+}

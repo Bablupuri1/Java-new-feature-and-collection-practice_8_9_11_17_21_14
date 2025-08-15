@@ -1,0 +1,77 @@
+//what are comming in java8 fatures topic or concept name
+//java 8 features
+//1. Lambda expression
+//lambda expression is an anonymous function
+//lambda expression is used to reduce the code and make it more readable
+//lambda expression is used to implement the functional interface
+
+
+
+=================================
+
+
+//2. Method reference
+//method reference is used to refer the existing method
+//method reference is used to reduce the code and make it more readable
+
+
+===========================================
+//3. Functional interface
+//functional interface is an interface with only one abstract method
+
+
+=========================================
+
+//4. Stream API
+//stream API is used to process the data in a pipeline
+
+=======================================
+
+
+//5. Optional class
+//optional class is used to handle the null value
+//avoide null pointer exception
+//so no distraubance in program execution
+
+==========================================
+
+//6. Default and static methods in interfaces
+//default and static methods in interfaces are used to add the new functionality to the interface
+
+=====================================
+
+//types of method reference
+//1. reference to static method
+//2. reference to instance method of an object of an arbitrary type
+
+//3. reference to instance method of an existing object of a particular type
+
+
+//this three topic already covered by me
+
+//6. Default method in interface
+//7. Static method in interface
+//8. Functional programming
+//12. Private methods in interfaces
+//16. Sealed classes
+//14. Switch expressions
+
+
+
+
+
+
+//9. Parallel Stream
+//10. Method parameter annotation
+//11. Repeatable annotations
+//13. Pattern matching for instanceof
+//15. Text blocks
+//17. Hidden classes
+//18. Records
+//19. var keyword
+//20. Ahead-of-Time (AOT) compilation
+//21. Garbage-Collector Interface
+//22. Compact Number Format
+//23. HTTP Client
+
+

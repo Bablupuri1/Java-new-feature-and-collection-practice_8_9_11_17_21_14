@@ -1,0 +1,13 @@
+INDEX VERSION 1.134
+D:\JAVA NEW FEATURE AND COLLECTION PRATICE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2721265636.index
+\ServletContextAndServletConfig\src\main\java
+D:\JAVA NEW FEATURE AND COLLECTION PRATICE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\693795165.index
+\LoginValidation\src\main\java
+D:\JAVA NEW FEATURE AND COLLECTION PRATICE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2953001715.index
+\CookieExample\src\main\java
+D:\JAVA NEW FEATURE AND COLLECTION PRATICE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\602976905.index
+\ProductDisplay\src\main\java
+D:\JAVA NEW FEATURE AND COLLECTION PRATICE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1638046310.index
+\ServletWithJspTag\src\main\java
+D:\JAVA NEW FEATURE AND COLLECTION PRATICE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2529877536.index
+\ImplicitJspObject\src\main\java

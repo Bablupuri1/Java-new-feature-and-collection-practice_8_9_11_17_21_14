@@ -1,0 +1,36 @@
+package InterfaceJava8;
+
+interface a
+{
+	default void m1()
+	{
+		System.out.println("this default is a inteface");
+	}
+}
+
+
+interface b
+{
+	default void m1()
+	{
+		System.out.println("this  default method od b interfce");
+		
+	}
+}
+
+
+
+
+public class BabluMain  implements a, b
+{
+	public  void m1()
+	{
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

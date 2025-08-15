@@ -1,0 +1,53 @@
+package Comrator_Example_Pratcing;
+import java.util.*;
+
+// User class
+class User1 {
+    int id;
+    String name;
+    int age;
+    double salary;
+
+    public User1(int id, String name, int age, double salary) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<User> userList = new ArrayList<>();
+        userList.add(new User(3, "Alice", 25, 50000));
+        userList.add(new User(1, "Bob", 30, 60000));
+        userList.add(new User(2, "Charlie", 28, 55000));
+
+        // ✅ Define Comparator reference for sorting by age
+        Comparator<User> ageComparator = new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                return u1.age - u2.age; // Ascending order
+            }
+        };
+
+        // ✅ Sort using the defined comparator
+        Collections.sort(userList, ageComparator);
+
+        // ✅ Print sorted list
+        System.out.println("Sorted by Age:");
+        for (User user : userList) {
+            System.out.println(user);
+        }
+    }
+}

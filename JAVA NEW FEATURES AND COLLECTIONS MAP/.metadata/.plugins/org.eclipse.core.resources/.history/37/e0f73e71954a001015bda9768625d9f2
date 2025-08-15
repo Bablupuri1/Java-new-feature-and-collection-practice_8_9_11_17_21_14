@@ -1,0 +1,8 @@
+package ArrayListExample;
+
+public class IntersectionofArrays {
+	public static void main(String[] args) {
+		
+	}
+
+}

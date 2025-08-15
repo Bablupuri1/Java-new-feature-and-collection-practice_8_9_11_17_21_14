@@ -1,0 +1,45 @@
+package CommonQuestionAsked;
+import java.util.*;
+
+class Employee {
+    String name;
+    double salary;
+    Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    public String toString() {
+        return name + " - " + salary;
+    }
+}
+
+public class CompareDemo {
+    public static void main(String[] args) {
+        List<Employee> employees = Arrays.asList(
+            new Employee("Bablu", 50000.75),
+            new Employee("Amit", 60000.50),
+            new Employee("Ravi", 45000.90),
+            new Employee("Sita", 60000.50) // same salary as Amit
+        );
+
+        System.out.println("🔹 Subtraction sorting:");
+        
+        
+        employees.stream()
+            .sorted((e1, e2) -> (int)(e2.salary - e1.salary)) // Not safe
+            .forEach(System.out::println);
+        
+        
+        
+
+        System.out.println("\n🔹 Double.compare sorting:");
+        
+        
+        employees.stream()
+        
+            .sorted((e1, e2) -> Double.compare(e1.salary, e2.salary)) // Safe
+            
+            
+            .forEach(System.out::println);
+    }
+}

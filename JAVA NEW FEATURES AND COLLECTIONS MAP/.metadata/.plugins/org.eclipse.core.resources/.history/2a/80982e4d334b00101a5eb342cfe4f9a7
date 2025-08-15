@@ -1,0 +1,59 @@
+import java.util.*;
+
+// User class
+class User implements Comparable<User> {
+    int id;
+    String name;
+    int age;
+    double salary;
+
+    // Constructor
+    public User(int id, String name, int age, double salary) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    // compareTo method to sort by id
+    @Override
+    public int compareTo(User other) {
+        return this.id - other.id; // Ascending order by id
+    }
+
+    // toString method for printing
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create list of users
+        List<User> userList = new ArrayList<>();
+        userList.add(new User(3, "Alice", 25, 50000));
+        userList.add(new User(1, "Bob", 30, 60000));
+        userList.add(new User(2, "Charlie", 28, 55000));
+
+        // Before sorting
+        System.out.println("Before Sorting:");
+        for (User user : userList) {
+            System.out.println(user);
+        }
+
+        // Sort using Comparable (by id)
+        Collections.sort(userList);
+
+        // After sorting
+        System.out.println("\nAfter Sorting by id:");
+        for (User user : userList) {
+            System.out.println(user);
+        }
+    }
+}

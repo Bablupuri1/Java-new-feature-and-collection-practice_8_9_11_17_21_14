@@ -1,0 +1,11 @@
+package CommonQuestionAsked;
+
+public class InStreamExample {
+	public static void main(String[] args) {
+		int sum = IntStream.rangeClosed(1, 10) // 1 se 10 tak (inclusive)
+                .sum();
+System.out.println(sum); // 55
+
+	}
+
+}

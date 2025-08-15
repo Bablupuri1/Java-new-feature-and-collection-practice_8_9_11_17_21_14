@@ -1,0 +1,18 @@
+package ArrayListExample;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) 
+    {
+    	
+    	
+    	
+    	
+        ArrayList<String> list = new ArrayList<>();
+        Iterator<String> itr = list.iterator();
+        System.out.println("welcome");
+
+//        String val = itr.next(); // ❌ This will throw NoSuchElementException
+//        System.out.println(val);
+    }
+}

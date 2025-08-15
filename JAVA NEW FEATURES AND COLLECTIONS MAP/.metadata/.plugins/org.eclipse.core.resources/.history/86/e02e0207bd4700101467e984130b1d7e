@@ -1,0 +1,17 @@
+package Examples;
+
+public class StringNewMethod {
+
+	public static void main(String[] args) {
+		
+//		: isBlank(),  repeat(), strip()
+		
+		String name="  Bablu  " ;
+		
+		System.out.println(name.isBlank());//if in string only white spaces the true return
+		System.out.println(name.strip());//remove space from starting and ending both sides 
+		System.out.println(name.repeat(3));
+		
+		
+	}
+}

@@ -1,0 +1,45 @@
+package Day_8_stream_Prime_Palindrome;
+import java.util.stream.IntStream;
+
+public class PalindromeCheck_UsingJava8 {
+    public static void main(String[] args) {
+        String str = "Madam";
+
+        
+        boolean isPalindrome = 
+        IntStream.range(0, str.length() / 2)
+        .allMatch(index -> Character.toLowerCase(str.charAt(index)) ==
+         Character.toLowerCase(str.charAt(str.length() - index - 1)));
+
+        
+        
+        
+        if (isPalindrome) {
+            System.out.println(str + " is a palindrome.");
+        } else {
+            System.out.println(str + " is not a palindrome.");
+        }
+        
+        IntStream.range(0, 10).forEach(num->System.out.print(num+" "));
+        
+        
+        
+         String name="raR";
+        
+         boolean isPalindrome1 = 
+  IntStream.range(0, name.length()/2).
+        allMatch(index->Character.toLowerCase(name.charAt(index))==Character.toLowerCase(name.charAt(name.length()-index-1)));
+        
+         
+        if(isPalindrome1)
+        {
+        	System.out.println("Palindrome");
+        }
+        else
+        {
+        	System.out.println("Not Palindrome");
+        }
+        
+        
+    }
+}

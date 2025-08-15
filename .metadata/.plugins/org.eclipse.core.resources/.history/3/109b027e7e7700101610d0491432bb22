@@ -1,0 +1,101 @@
+package CommonQuestionAsked;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+
+// Employee class with name and salary
+class employee {
+    public String name;
+    public double salary;
+
+    // Constructor to initialize employee object
+    public employee(String string, int i) {
+        this.name = string;
+        this.salary = i;
+    }
+
+    // Getters and setters
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public double getSalary() { return salary; }
+    public void setSalary(double salary) { this.salary = salary; }
+
+    @Override
+    public String toString() {
+        return "employee [name=" + name + ", salary=" + salary + "]";
+    }
+}
+
+public class StringLOngestWord {
+
+    public static void main(String[] args) {
+
+        // A list of strings
+        List<String> word = Arrays.asList("a", "ab", "abc");
+
+        // ✅ 1st way: Find longest word using sorted() in reverse order of natural sorting
+        // Here reverseOrder() will put the lexicographically largest string first, not by length
+        Optional<String> first = word.stream()
+                                     .sorted(Comparator.reverseOrder())
+                                     .findFirst();
+        System.out.println(first);
+
+        //  2nd way: Using reduce() to compare length of two words
+        String string = word.stream()
+                            .reduce((w1, w2) -> w1.length() > w2.length() ? w1 : w2)
+                            .get();
+        System.out.println("Max length string (using reduce): " + string);
+
+        // 3rd way: Sort by length in descending order using Integer.compare
+        System.out.println("Sorting by length in descending order:");
+        word.stream()
+            .sorted((w1, w2) -> Integer.compare(w2.length(), w1.length()))
+            .forEach(System.out::println);
+
+        //  Find second largest length string
+        Optional<String> first2 = word.stream()
+            .sorted((w1, w2) -> Integer.compare(w2.length(), w1.length()))
+            .distinct() // ensures unique strings
+            .skip(1)    // skip the first (largest) string
+            .findFirst();
+        System.out.println("Second largest length string: " + first2);
+
+        //  Find third largest length string
+        Optional<String> first3 = word.stream()
+            .sorted((w1, w2) -> Integer.compare(w2.length(), w1.length()))
+            .distinct()
+            .skip(2)    // skip first two largest
+            .findFirst();
+        System.out.println("Third largest length string: " + first3);
+
+        // -------------------------------------------------
+        // Now working with Employee list
+        // -------------------------------------------------
+
+        // Create a list of employees
+        ArrayList<employee> list = new ArrayList<>();
+        list.add(new employee("bablu", 60000));
+        list.add(new employee("Abhi", 50000));
+        list.add(new employee("Ajay", 40000));
+        list.add(new employee("Anil", 30000));
+        list.add(new employee("Prabhash", 20000));
+
+        //  1st way: Using max() with Comparator.comparingDouble
+        Optional<employee> max = list.stream()
+            .max(Comparator.comparingDouble(e -> e.salary));
+        System.out.println("Highest salary employee (comparingDouble): " + max);
+
+        //  2nd way: Using reduce() to compare salaries
+        Optional<employee> reduce = list.stream()
+            .reduce((s1, s2) -> s1.salary > s2.salary ? s1 : s2);
+        System.out.println("Highest salary employee (reduce): " + reduce);
+
+        //  3rd way: Using max() with Double.compare
+        Optional<employee> max2 = list.stream()
+            .max((s1, s2) -> Double.compare(s1.salary, s2.salary));
+        System.out.println("Highest salary employee (Double.compare): " + max2);
+    }
+}

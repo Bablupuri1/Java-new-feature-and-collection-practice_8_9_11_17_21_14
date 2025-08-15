@@ -1,0 +1,38 @@
+package InterfaceJava8;
+
+
+interface a1
+{
+	public static void m1()
+	{
+		System.out.println("this is static mehtod of a inteface");
+	}
+}
+
+
+class bablu
+{
+	public static void m2()
+	{
+		System.out.println("this is bablu mehtod");
+	}
+}
+
+public class Bablu1Main extends bablu  implements a1 
+{
+	public static void main(String[] args) {
+		
+		a1.m1();
+		//m1(); this is invalide
+		m2();//this is valide 
+		
+		BabluMain ob2= new BabluMain();
+		ob2.m1();//this is valide
+//		BabluMain.m1(); this is invalide 
+		
+		
+		
+		
+	}
+
+}

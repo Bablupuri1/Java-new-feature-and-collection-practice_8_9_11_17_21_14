@@ -1,0 +1,52 @@
+package Day1_Character_String;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class FirstNonRepeatingCharacter_And_FrequencyOfCharacter {
+	public static void main(String[] args) {
+		System.out.println("Main");
+
+		String name = "bablu";
+
+		Map<Character, Integer> mapcharacter = new LinkedHashMap<Character, Integer>();
+
+		// here map used LinkedhashMap becouse its maintain insertion order
+
+		// first we need to convert that string into array
+
+		char arr[] = name.toCharArray();
+
+		for (Character c : arr) {
+			if (mapcharacter.containsKey(c)) {
+				mapcharacter.put(c, mapcharacter.get(c) + 1);
+			} else {
+				mapcharacter.put(c, 1);
+			}
+		}
+
+		System.out.println("This is Frequency of Character......\n");
+		// now Display Which character integrr value is one
+
+		for (Map.Entry<Character, Integer> entry : mapcharacter.entrySet()) {
+
+			System.out.println("Key  : " + entry.getKey() + "   Value:" + entry.getValue());
+		}
+
+		// now // we can check which key integer value is 1 and return
+
+		System.out.println("First Non-Repeating Character......");
+		
+		
+		for (Map.Entry<Character, Integer> entry : mapcharacter.entrySet()) {
+			if (entry.getValue() == 1) {
+				System.out.println("Character Is:" + entry.getKey() + " Value:" + entry.getValue());
+				return;
+
+			}
+
+		}
+
+	}
+
+}

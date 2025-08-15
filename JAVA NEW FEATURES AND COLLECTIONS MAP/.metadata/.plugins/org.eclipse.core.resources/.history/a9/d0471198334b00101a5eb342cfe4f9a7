@@ -1,0 +1,59 @@
+package Comprable_Example_Pratcing;
+import java.util.*;
+
+// User class
+class User {
+    int id;
+    String name;
+    int age;
+    double salary;
+
+    // Constructor
+    public User(int id, String name, int age, double salary) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    // toString method for printing
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create list of users
+        List<User> userList = new ArrayList<>();
+        userList.add(new User(3, "Alice", 25, 50000));
+        userList.add(new User(1, "Bob", 30, 60000));
+        userList.add(new User(2, "Charlie", 28, 55000));
+
+        // Before sorting
+        System.out.println("Before Sorting:");
+        for (User user : userList) {
+            System.out.println(user);
+        }
+
+        // Sort using Comparator (by age)
+        Collections.sort(userList, new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                return u1.age - u2.age; // Ascending order by age
+            }
+        });
+
+        // After sorting
+        System.out.println("\nAfter Sorting by age:");
+        for (User user : userList) {
+            System.out.println(user);
+        }
+    }
+}

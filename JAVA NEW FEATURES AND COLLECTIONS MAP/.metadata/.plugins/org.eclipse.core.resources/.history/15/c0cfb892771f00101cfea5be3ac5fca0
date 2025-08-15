@@ -1,0 +1,16 @@
+package TwoArgumentFunctionalInterface;
+
+import java.util.function.BiFunction;
+
+public class BiFunctionInterface 
+{
+	
+	public static void main(String[] args)
+	{
+		BiFunction<Integer, Integer, Integer> bi=(inp1, inp2)->{
+			
+		};
+		
+	}
+
+}

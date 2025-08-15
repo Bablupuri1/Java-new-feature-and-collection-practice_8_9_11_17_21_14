@@ -1,0 +1,15 @@
+package Day_8_stream_Prime_Palindrome;
+
+import java.util.stream.IntStream;
+
+public class PrimeCheckJava8 {
+	public static void main(String[] args) {
+		
+		
+		
+		int n=13;
+		
+		IntStream.range(2, n/2).allMatch(num->num%2!=0);
+	}
+
+}

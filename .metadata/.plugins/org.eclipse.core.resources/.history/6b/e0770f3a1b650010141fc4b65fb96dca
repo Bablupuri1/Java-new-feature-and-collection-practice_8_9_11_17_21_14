@@ -1,0 +1,9 @@
+package Day1_Character_String;
+
+public class First_And_Second_Non_Repeating_Character {
+	public static void main(String[] args) {
+		
+		String name="bablu"
+	}
+
+}

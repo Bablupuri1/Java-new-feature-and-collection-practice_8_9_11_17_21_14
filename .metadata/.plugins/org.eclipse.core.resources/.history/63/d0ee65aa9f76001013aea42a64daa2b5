@@ -1,0 +1,21 @@
+package CommonQuestionAsked;
+
+import java.util.stream.IntStream;
+
+public class InStreamExample {
+	public static void main(String[] args) 
+	{
+		
+		int sum = IntStream.range(1, 10) // 1 se 10 tak (inclusive)
+				.sum();
+		System.out.println(sum); // 55
+		
+		
+		
+		int sum1 = IntStream.range(1, 10) // 1 se 10 tak (inclusive)
+				.sum();
+		System.out.println(sum1); // 55
+
+	}
+
+}

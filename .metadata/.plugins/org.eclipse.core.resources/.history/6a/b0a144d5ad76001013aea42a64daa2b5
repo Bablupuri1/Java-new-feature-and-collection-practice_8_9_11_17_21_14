@@ -1,0 +1,18 @@
+package CommonQuestionAsked;
+
+public class Palindromejava8 {
+
+	public static void main(String[] args) {
+		
+		String name="madam";
+		name=name.toLowerCase();
+		
+		
+		
+		//now we can use IntStream and iterate name.length/2 and  compare agar match ho gya to
+		// return true karega
+		
+		
+		
+	}
+}

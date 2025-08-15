@@ -1,0 +1,45 @@
+package OOPS_CODE_DECODE;
+
+class Parents {
+	public void m1() {
+		System.out.println("Parent.m1()");
+
+	}
+}
+
+class Childs extends Parents {
+
+
+	public void m2() {
+		System.out.println("Child.m1()");
+
+	}
+}
+
+public class Inheritance {
+	public static void main(String[] args) {
+
+		//perform upcasting
+
+
+		Parents p= new Childs();
+		p.m1();
+
+
+		//wheenevrr we peroform upcasting then child class specific method is hidden not vissible
+
+
+		//becouse
+
+
+		//REMEMBER ONE THINGH IF METHOD OVERLOADING THEN METHOD EXECUTE WHICH CLASS REFERENCED TYPE
+		//YOU  CREATE  MEANS COMPILE TIME
+
+		//OTHER WISE IN OVERRIDING IN RUN TIME
+
+
+
+
+	}
+
+}

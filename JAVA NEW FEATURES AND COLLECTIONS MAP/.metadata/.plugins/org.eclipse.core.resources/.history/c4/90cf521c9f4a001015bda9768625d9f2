@@ -1,0 +1,43 @@
+package ArrayListExample;
+import java.util.*;
+
+public class FrequencyManual {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>(Arrays.asList(2, 3, 2, 4, 3, 5, 2));
+
+        Map<Integer, Integer> freqMap = new HashMap<>();
+
+        
+        // Mark visited numbers to avoid re-counting
+        for (int i = 0; i < list.size(); i++) {
+            int count = 1;
+
+            if (list.get(i) == -1) continue;
+
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).equals(list.get(j))) {
+                	System.out.println("Matched:"+list.get(j));
+                    count++;
+                    list.set(j, -1); // Mark as visited
+                }
+            }
+
+            freqMap.put(list.get(i), count);
+        }
+
+        // Print result
+        for (Map.Entry<Integer, Integer> entry : freqMap.entrySet()) {
+            System.out.println("Number " + entry.getKey() + " → " + entry.getValue() + " times.");
+        }
+        
+        //we can  Display Using foreach also
+        
+        
+        System.out.println("{");
+        freqMap.forEach((key, value) -> 
+            System.out.println("  \"" + key + "\": " + value + ",")
+        );
+        System.out.println("}");
+
+    }
+}

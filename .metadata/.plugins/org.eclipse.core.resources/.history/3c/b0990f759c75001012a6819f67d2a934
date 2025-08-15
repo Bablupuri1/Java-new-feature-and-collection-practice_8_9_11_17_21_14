@@ -1,0 +1,9 @@
+package CommonQuestionAsked;
+
+public class DisplayDuplicateElement {
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

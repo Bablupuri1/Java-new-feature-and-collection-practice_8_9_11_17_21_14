@@ -1,0 +1,16 @@
+package InterfaceJava8;
+
+interface a
+{
+	default void m1()
+	{
+		System.out.println("this default is a inteface");
+	}
+}
+
+
+
+
+public class BabluMain {
+
+}

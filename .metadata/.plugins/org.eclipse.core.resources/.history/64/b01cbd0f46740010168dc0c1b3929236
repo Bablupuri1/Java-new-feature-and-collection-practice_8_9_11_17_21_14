@@ -1,0 +1,8 @@
+package Day_8_stream_Prime_Palindrome;
+
+public class PrimeCheckJava8 {
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,6 @@
+package TwoArgumentFunctionalInterface;
+
+public class BiFunctionInterface 
+{
+
+}

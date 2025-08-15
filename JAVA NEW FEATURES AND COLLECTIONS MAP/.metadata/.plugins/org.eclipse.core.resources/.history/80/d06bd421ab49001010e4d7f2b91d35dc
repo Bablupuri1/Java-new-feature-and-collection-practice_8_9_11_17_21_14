@@ -1,0 +1,17 @@
+package ArrayListExample;
+
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class CopyOnWriteArrayListExample {
+	public static void main(String[] args)
+	{
+		CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+		
+		list.add("aaa");
+		list.add("bbbb");
+		
+		Iterator<String> itr=list.iterator();
+
+	}
+}

@@ -1,0 +1,53 @@
+import java.util.*;
+
+// Comparable -> Natural Ordering (Ascending age by default)
+class Student implements Comparable<Student> {
+    int age;
+    String name;
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Natural ordering by name ASC (for this example we override from age to name)
+    public int compareTo(Student s) {
+        return this.name.compareTo(s.name); // Ascending order by name
+    }
+
+    public String toString() {
+        return name + " - " + age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<Student> list = new ArrayList<>();
+        list.add(new Student("Ravi", 22));
+        list.add(new Student("Ankit", 20));
+        list.add(new Student("Bablu", 25));
+
+        System.out.println("Original List:");
+        System.out.println(list);
+
+        // 1️⃣ Comparable -> Name Ascending (default compareTo)
+        Collections.sort(list);
+        System.out.println("\nSorted by Name ASC (Comparable):");
+        System.out.println(list);
+
+        // 2️⃣ Comparable -> Name Descending using lambda (reversing Comparable result)
+        Collections.sort(list, (s1, s2) -> s2.compareTo(s1));
+        System.out.println("\nSorted by Name DESC (Comparable + Lambda):");
+        System.out.println(list);
+
+        // 3️⃣ Comparator -> Name Ascending (lambda)
+        Collections.sort(list, (s1, s2) -> s1.name.compareTo(s2.name));
+        System.out.println("\nSorted by Name ASC (Comparator + Lambda):");
+        System.out.println(list);
+
+        // 4️⃣ Comparator -> Name Descending (lambda)
+        Collections.sort(list, (s1, s2) -> s2.name.compareTo(s1.name));
+        System.out.println("\nSorted by Name DESC (Comparator + Lambda):");
+        System.out.println(list);
+    }
+}

@@ -1,0 +1,17 @@
+package TwoArgumentFunctionalInterface;
+
+import java.util.function.BiPredicate;
+
+public class BiPredicateInterface 
+{
+	public static void main(String[] args)
+	{
+		BiPredicate<Integer, Integer> isEven=(Integer a,Integer b)->a+b%2==0;
+		
+		System.out.println(isEven.test(null, null));
+		
+		
+		
+	}
+
+}

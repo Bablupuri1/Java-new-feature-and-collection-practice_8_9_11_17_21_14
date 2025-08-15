@@ -1,0 +1,62 @@
+package ArrayListExample;
+
+import java.util.*;
+
+public class FailFastExample {
+	public static void main(String[] args) {
+
+		List<String> list = new ArrayList<>();
+		list.add("A");
+		list.add("B");
+
+		Iterator<String> it = list.iterator();
+
+		while (it.hasNext()) {
+
+			System.out.println(it.next());
+//			list.add("C"); // ❌ Exception come here becouse ArrayList object is not synchronized and 
+			// we are trying to peroform multiple operation at a time this is not possible 
+			//becouse  data inconsistency
+			
+			list.set(1, "lll");//but you can update becouse ,  if we perofrm update operation
+			//then  object stracture (size,) does not effect so, we can happely do this.
+			
+			list.remove(0);// not recommended may be occur or may not
+
+//			
+//
+		}
+
+//		System.out.println("After Modofication:" + list);
+
+		// i want to iterate using forEach
+
+//		System.out.println("Iterate Using forEach....");
+
+//		list.forEach(element -> System.out.println(element));
+
+		// using ListIterator
+
+		System.out.println("Iterate using ListIterator...");
+		ListIterator<String> litr = list.listIterator();
+
+		while (litr.hasNext()) {
+			System.out.println(litr.next());
+//			list.add("lll");//exception
+//			list.remove(0);//accept no exception
+			list.add("pppp";			litr.add("kkk");// using add method of ListIterator we can do this then how to do
+		}
+
+		System.out.println("After Modofication:" + list);
+
+		// now i wan ti iterate using Enumeration
+
+		System.out.println("Iterate Using Enumeration....");
+
+		Enumeration<String> enuml = Collections.enumeration(list);
+		while (enuml.hasMoreElements()) {
+			System.out.println(enuml.nextElement());
+		}
+
+	}
+}

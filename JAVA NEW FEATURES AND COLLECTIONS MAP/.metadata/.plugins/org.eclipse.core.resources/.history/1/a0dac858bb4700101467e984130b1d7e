@@ -1,0 +1,15 @@
+package Examples;
+
+public class StringNewMethod {
+
+	public static void main(String[] args) {
+		
+//		: isBlank(),  repeat(), strip()
+		
+		String name=" Bablu ";
+		
+		System.out.println(name.isBlank());
+		
+		
+	}
+}

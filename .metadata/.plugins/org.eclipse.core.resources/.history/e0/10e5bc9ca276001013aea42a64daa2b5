@@ -1,0 +1,20 @@
+package CommonQuestionAsked;
+
+import java.util.stream.IntStream;
+
+public class PrimeCheckJava8 {
+
+	public static void main(String[] args) {
+		
+		
+		//n divisible by half of number 
+		
+		int n = 13;
+		boolean isPrime = n > 1 &&
+		                  IntStream.range(2, n/2 + 1)
+		                           .noneMatch(num -> n % num == 0);
+
+
+		
+	}
+}

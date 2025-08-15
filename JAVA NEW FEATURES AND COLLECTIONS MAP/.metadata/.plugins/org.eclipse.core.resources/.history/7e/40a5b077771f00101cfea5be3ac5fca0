@@ -1,0 +1,10 @@
+package TwoArgumentFunctionalInterface;
+
+public class BiFunctionInterface 
+{
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,27 @@
+package TwoArgumentFunctionalInterface;
+
+import java.util.function.BiPredicate;
+
+public class BiPredicateInterface 
+{
+	public static void main(String[] args)
+	{
+		BiPredicate<Integer, Integer> isEven=(a, b)->a+b%2==0;//false becouse here precedence mistake
+		
+		
+		System.out.println(isEven.test(4, 4));
+		
+		
+		
+		
+		
+BiPredicate<Integer, Integer> isEvens=(a, b)->(a+b)%2==0;//false becouse here precedence mistake
+		
+		
+		System.out.println(isEvens.test(4, 4));
+		
+		
+		
+	}
+
+}

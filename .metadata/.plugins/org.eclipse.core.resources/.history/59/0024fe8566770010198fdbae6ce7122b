@@ -1,0 +1,127 @@
+package CommonQuestionAsked;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+class Employeee {
+	int id;
+	String name;
+	String dept;
+	int age;
+	double salary;
+
+	public Employeee(int id, String name, String dept, int age, double salary) {
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+		this.age = age;
+		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return id + " - " + name + " - " + dept + " - " + age + " - " + salary;
+	}
+}
+
+public class EmployeeStreamExample {
+	public static void main(String[] args) {
+
+		List<Employeee> employees = Arrays.asList(new Employeee(1, "Aman", "HR", 25, 50000),
+				new Employeee(2, "Bablu", "IT", 22, 60000), new Employeee(3, "Kumar", "HR", 30, 55000),
+				new Employeee(4, "Ankit", "Finance", 28, 65000), new Employeee(5, "Raj", "IT", 35, 60000));
+
+		// 1️ Find all employees grouped by department
+		Map<String, List<Employeee>> groupedByDept = employees.stream().collect(Collectors.groupingBy(e -> e.dept));
+		System.out.println("Grouped By Department: " + groupedByDept);
+
+		// 2️ Fetch all employees in HR dept
+		List<Employeee> hrEmployees = employees.stream().filter(e -> e.dept.equalsIgnoreCase("HR"))
+				.collect(Collectors.toList());
+		System.out.println("HR Employees: " + hrEmployees);
+
+		// 3️ Find employees whose age is > 18
+		List<Employeee> ageAbove18 = employees.stream().filter(e -> e.age > 18).collect(Collectors.toList());
+		System.out.println("Age > 18: " + ageAbove18);
+
+		// 4️ Find employee with highest salary, if same salary then return default
+		// player
+		Employeee highestOrDefault = employees.stream().max(Comparator.comparingDouble(e -> e.salary))
+				.orElse(new Employeee(0, "Default Player", "None", 0, 0));
+		System.out.println("Highest Salary or Default: " + highestOrDefault);
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 5️ Find employee with highest salary
+		Employeee highestSalary = employees.stream().max(Comparator.comparingDouble(e -> e.salary)).get();
+		System.out.println("Highest Salary Employee sorting karke: " + highestSalary);
+
+		// finding highest salary
+		
+
+		Employeee highestSalary1 = employees.stream().reduce((e1, e2) -> e1.salary > e2.salary ? e1 : e2).orElse(null);
+
+		System.out.println("Highest salary employee reduce:" + highestSalary1);
+
+		
+		// 6️ Find employee with second highest salary
+
+		Employeee secondHighestSalary = employees.stream().sorted((e1, e2) -> Double.compare(e2.salary, e1.salary)) // descending
+																													// order
+				.skip(1).findFirst().orElse(null);
+		
+		Employeee orElseThrow = employees.stream().sorted((e1,e2)->Double.compare(e2.salary, e1.salary)).findFirst().orElseThrow(null);
+		
+		System.out.println("Highest salary employee with sorting:"+orElseThrow);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		System.out.println("Second Highest Salary Employee: " + secondHighestSalary);
+
+		// 7️⃣ Find employees whose name starts with 'A' or 'a'
+		List<Employeee> nameStartsWithA = employees.stream().filter(e -> e.name.toLowerCase().startsWith("a"))
+				.collect(Collectors.toList());
+
+		System.out.println("Name starts with A/a: " + nameStartsWithA);
+	}
+}

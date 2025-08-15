@@ -1,0 +1,28 @@
+package CommonQuestionAsked;
+
+import java.util.Arrays;
+import java.util.OptionalInt;
+
+public class MaximumAndMinimum {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4};
+//        System.out.println(arr.toString());
+        System.out.println(Arrays.toString(arr));
+
+        
+       // Runnable
+        
+          long count = Arrays.stream(arr).count();
+          int sum = Arrays.stream(arr).sum();
+          
+       
+  OptionalInt max = Arrays.stream(arr).max();
+        OptionalInt min = Arrays.stream(arr).min(); // O(n)
+        
+        
+
+        System.out.println("Max: " + (   max.isPresent() ? max.getAsInt() : "Not Found")    );
+        System.out.println("Min: " + (min.isPresent() ? min.getAsInt() : "Not Found"));
+        
+    }
+}
