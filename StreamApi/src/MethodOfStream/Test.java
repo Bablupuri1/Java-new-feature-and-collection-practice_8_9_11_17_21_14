@@ -1,0 +1,30 @@
+package MethodOfStream;
+
+import java.util.Arrays;
+import java.util.List;
+
+class Persons {
+    String name;
+    Persons(String name) {
+        this.name = name;
+        System.out.println("Person created: " + name);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+    	
+    	
+        List<String> names = Arrays.asList("Amit", "Bablu", "Ravi");
+
+        // Using lambda//yha forEach jo h Iterable interface ke under default method h 
+        names.forEach(name -> new Person(name));
+        
+        //or 
+        names.stream().forEach(name -> new Person(name));
+        
+
+        // Using constructor reference
+        names.forEach(Persons::new);
+    }
+}

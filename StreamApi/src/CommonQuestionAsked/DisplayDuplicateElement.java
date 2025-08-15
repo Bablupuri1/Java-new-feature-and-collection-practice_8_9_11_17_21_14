@@ -1,0 +1,47 @@
+package CommonQuestionAsked;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class DisplayDuplicateElement {
+	public static void main(String[] args) {
+		
+		//how to display duplicate   element from the list
+		
+		List<Integer> list= new ArrayList<Integer>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(10);
+		list.add(40);
+		list.add(20);
+
+		
+		int arr[]= {1,2,1,2,3,4,5};
+		List<Integer> collect = Arrays.stream(arr).boxed().collect(Collectors.toList());
+		//now we can  perform collections.frequency
+		
+		System.out.println("Duplicate display is the list use frequency arr");
+		collect.stream().filter(num->Collections.frequency(collect, num)>1).distinct().
+		forEach(n->System.out.println(n));
+		
+		
+		
+		System.out.println("___________________________________");
+		
+		System.out.println("Duplicate display is the list use frequency list");
+
+		//list.
+		list.stream().
+		
+		filter(num->Collections.frequency(list,num)>1).
+		
+		distinct()
+		
+		.forEach(System.out::println);
+	}
+
+}
